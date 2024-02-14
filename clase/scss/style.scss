@@ -1,0 +1,12 @@
+//base - siempre importar primero las variables
+@import "base/vars";
+@import "base/reset";
+@import "base/utitilies";
+
+//components
+@import "components/navbar";
+@import "components/footer";
+
+//layouts
+@import "layouts/index";
+@import "layouts/box";

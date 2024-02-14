@@ -1,0 +1,432 @@
+/* RESET */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.flexible, .element-container p, .element-container, .element, .hero, body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  max-height: 100%;
+  background-color: #111;
+}
+
+.hero {
+  height: 300px;
+  background: linear-gradient(123deg, #e600ff, #0000ff);
+  padding: 10px;
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 30% 10%;
+  transition: background-size 0.5s;
+}
+.hero h1 {
+  color: transparent;
+  font-size: 5rem;
+  background: linear-gradient(123deg, #e600ff, #0000ff);
+  background-clip: text;
+  color: #fff;
+  transition: 0.4s;
+}
+.hero h1:hover {
+  color: transparent;
+  background: linear-gradient(123deg, #e600ff, #0000ff);
+  background-clip: text;
+}
+.hero:hover {
+  background-size: 100% 10%;
+}
+
+.element {
+  background-color: #222222;
+  width: 100%;
+  height: 500px;
+  padding: 30px;
+}
+.element-container {
+  width: 300px;
+  height: 300px;
+  transition: 0.4s;
+  border: 1px solid #111;
+  animation-name: efecto;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-duration: 0.5s;
+  position: relative;
+  overflow: hidden;
+}
+.element-container h2 {
+  position: absolute;
+  background: linear-gradient(90deg, #e600ff, #0000ff);
+  width: 100%;
+  height: 100%;
+  transition: 1s;
+  opacity: 0;
+  animation: deformar 2s 1 linear;
+}
+.element-container:hover h2 {
+  background: linear-gradient(90deg, #e600ff, #0000ff);
+}
+.element-container p {
+  border: 1px solid #111;
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+}
+
+@keyframes deformar {
+  0% {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+}
+@keyframes efecto {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.3);
+  }
+}
+.carousel {
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  position: relative;
+}
+.carousel .slide {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0;
+  animation: carousel 15s infinite linear;
+}
+.carousel .slide:nth-child(1) {
+  animation-delay: 0s;
+}
+.carousel .slide:nth-child(2) {
+  animation-delay: 5s;
+}
+.carousel .slide:nth-child(3) {
+  animation-delay: 10s;
+}
+.carousel .slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@keyframes carousel {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  8% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  33% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  40% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+.main {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #111;
+}
+.main .box {
+  width: 90%;
+  height: 700px;
+  background: #fff;
+}
+
+.col-1 {
+  width: 10%;
+}
+
+.col-2 {
+  width: 20%;
+}
+
+.col-3 {
+  width: 30%;
+}
+
+.col-4 {
+  width: 40%;
+}
+
+.col-5 {
+  width: 50%;
+}
+
+.col-6 {
+  width: 60%;
+}
+
+.col-7 {
+  width: 70%;
+}
+
+.col-8 {
+  width: 80%;
+}
+
+.col-9 {
+  width: 90%;
+}
+
+.col-10 {
+  width: 100%;
+}
+
+.col-11 {
+  width: 110%;
+}
+
+.col-12 {
+  width: 120%;
+}
+
+.col-1 {
+  width: 10%;
+}
+
+.col-2 {
+  width: 20%;
+}
+
+.col-3 {
+  width: 30%;
+}
+
+.col-4 {
+  width: 40%;
+}
+
+.col-5 {
+  width: 50%;
+}
+
+.col-6 {
+  width: 60%;
+}
+
+.col-7 {
+  width: 70%;
+}
+
+.col-8 {
+  width: 80%;
+}
+
+.col-9 {
+  width: 90%;
+}
+
+.col-10 {
+  width: 100%;
+}
+
+.col-11 {
+  width: 110%;
+}
+
+.p-1 {
+  padding: 10px;
+}
+
+.p-2 {
+  padding: 20px;
+}
+
+.p-3 {
+  padding: 30px;
+}
+
+.p-4 {
+  padding: 40px;
+}
+
+.p-5 {
+  padding: 50px;
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin: 30px 0;
+}
+
+.btn-primary {
+  background-color: blue;
+  transition: 0.4s;
+  border: 1px solid transparent;
+  text-align: center;
+  color: #fff;
+}
+.btn-primary:hover {
+  background-color: #000099;
+  border: 1px solid #6666ff;
+  box-shadow: 3px 3px 3px #3333ff;
+}
+
+.text-primary {
+  color: blue;
+}
+
+.border-primary {
+  border: 1px solid blue;
+}
+
+.btn-danger {
+  background-color: red;
+  transition: 0.4s;
+  border: 1px solid transparent;
+  text-align: center;
+  color: #fff;
+}
+.btn-danger:hover {
+  background-color: #990000;
+  border: 1px solid #ff6666;
+  box-shadow: 3px 3px 3px #ff3333;
+}
+
+.text-danger {
+  color: red;
+}
+
+.border-danger {
+  border: 1px solid red;
+}
+
+.btn-warning {
+  background-color: orange;
+  transition: 0.4s;
+  border: 1px solid transparent;
+  text-align: center;
+  color: #fff;
+}
+.btn-warning:hover {
+  background-color: #996300;
+  border: 1px solid #ffc966;
+  box-shadow: 3px 3px 3px #ffb733;
+}
+
+.text-warning {
+  color: orange;
+}
+
+.border-warning {
+  border: 1px solid orange;
+}
+
+.btn-dark {
+  background-color: black;
+  transition: 0.4s;
+  border: 1px solid transparent;
+  text-align: center;
+  color: #fff;
+}
+.btn-dark:hover {
+  background-color: #333333;
+  border: 1px solid #333333;
+  box-shadow: 3px 3px 3px #1a1a1a;
+}
+
+.text-dark {
+  color: black;
+}
+
+.border-dark {
+  border: 1px solid black;
+}
+
+.btn-light {
+  background-color: white;
+  transition: 0.4s;
+  border: 1px solid transparent;
+  text-align: center;
+  color: #111;
+}
+.btn-light:hover {
+  background-color: #666666;
+  color: #fff;
+}
+
+.text-light {
+  color: white;
+}
+
+.border-light {
+  border: 1px solid white;
+}
+
+.btn-success {
+  background-color: green;
+  transition: 0.4s;
+  border: 1px solid transparent;
+  text-align: center;
+  color: #fff;
+}
+.btn-success:hover {
+  background-color: #001a00;
+  border: 1px solid #00e600;
+  box-shadow: 3px 3px 3px #00b300;
+}
+
+.text-success {
+  color: green;
+}
+
+.border-success {
+  border: 1px solid green;
+}
+
+.btn-info {
+  background-color: gray;
+  transition: 0.4s;
+  border: 1px solid transparent;
+  text-align: center;
+  color: #fff;
+}
+.btn-info:hover {
+  background-color: #4d4d4d;
+  border: 1px solid #b3b3b3;
+  box-shadow: 3px 3px 3px #9a9a9a;
+}
+
+.text-info {
+  color: gray;
+}
+
+.border-info {
+  border: 1px solid gray;
+}
+
+/*# sourceMappingURL=style.css.map */

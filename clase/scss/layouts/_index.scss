@@ -1,0 +1,166 @@
+body {
+  @extend .flexible;
+  width: 100%;
+  min-height: 100vh;
+  max-height: 100%;
+  background-color: #111;
+
+  // background: linear-gradient(123deg, #0b0b0b, #00000089), url("../assets/hero.jpg");
+
+  // background: radial-gradient(circle, #090936, #4f0a56);
+}
+
+.hero {
+  @extend .flexible;
+  height: 300px;
+  h1 {
+    color: transparent;
+    font-size: 5rem;
+    background: linear-gradient(123deg, #e600ff, #0000ff);
+    // background: url("../assets/hero.jpg");
+    background-clip: text;
+    // background-size: cover;
+    color: #fff;
+    transition: 0.4s;
+    &:hover {
+      color: transparent;
+      background: linear-gradient(123deg, #e600ff, #0000ff);
+      background-clip: text;
+    }
+  }
+
+  background: linear-gradient(123deg, #e600ff, #0000ff);
+  padding: 10px;
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 30% 10%;
+  transition: background-size 0.5s;
+
+  &:hover {
+    background-size: 100% 10%;
+  }
+}
+.element {
+  @extend .flexible;
+  background-color: #222222;
+  width: 100%;
+  height: 500px;
+  padding: 30px;
+
+  &-container {
+    @extend .flexible;
+    width: 300px;
+    height: 300px;
+    transition: 0.4s;
+    border: 1px solid #111;
+    // transition: width 5s, height 3s;
+    animation-name: efecto;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    animation-duration: 0.5s;
+    position: relative;
+    overflow: hidden;
+    h2 {
+      position: absolute;
+      background: linear-gradient(90deg, #e600ff, #0000ff);
+      width: 100%;
+      height: 100%;
+      transition: 1s;
+      opacity: 0;
+      animation: deformar 2s 1 linear;
+    }
+
+    &:hover h2 {
+      background: linear-gradient(90deg, #e600ff, #0000ff);
+
+      // transform: rotateY(86deg);
+      // transform: scale(1.4);
+      // transform: skew(20deg, 10deg);
+      // transform: rotate(-5deg) scale(1.1);
+      // border-radius: 100%;
+      // width: 320px;
+      // height: 320px;
+    }
+    p {
+      @extend .flexible;
+      border: 1px solid #111;
+      width: 100%;
+      height: 100%;
+      padding: 30px;
+    }
+  }
+}
+
+@keyframes deformar {
+  0% {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+}
+
+@keyframes efecto {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1.3);
+  }
+}
+
+.carousel {
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  position: relative;
+
+  .slide {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+    animation: carousel 15s infinite linear;
+    &:nth-child(1) {
+      animation-delay: 0s;
+    }
+
+    &:nth-child(2) {
+      animation-delay: 5s;
+    }
+    &:nth-child(3) {
+      animation-delay: 10s;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+@keyframes carousel {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  8% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  33% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  40% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}

@@ -1,0 +1,98 @@
+$color-schema: light;
+//condicionales
+.main {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  min-height: 100vh;
+
+  @if $color-schema == dark {
+    background-color: #eee;
+  } @else if $color-schema == light {
+    background-color: #111;
+  } @else {
+    background-color: rgb(33, 33, 91);
+  }
+  .box {
+    width: 90%;
+    height: 700px;
+    // @include background(url('../assets/hero.jpg'));
+    @include background(#fff)
+  }
+}
+
+//bucles
+//tiene en cuenta del 1 al ultimo numero en este caso el 12
+@for $valor from 1 through 12 {
+  .col-#{$valor} {
+    width: 10% * $valor;
+  }
+}
+//tiene en cuenta del 1 al ante ultimo numero en este caso hasta el 11
+@for $valor from 1 to 12 {
+  .col-#{$valor} {
+    width: 10% * $valor;
+  }
+}
+
+@for $valor from 1 through 5 {
+  .p-#{$valor} {
+    padding: 10px * $valor;
+  }
+}
+
+$colors: (
+  primary: blue,
+  danger: red,
+  warning: orange,
+  dark: black,
+  light: white,
+  success: green,
+  info: gray
+);
+
+.btn-container {
+  // @extend .flexible;
+  // @include flexible;
+  @include flex(row, center, center, 30px);
+  margin: 30px 0;
+}
+
+@each $key, $valor in $colors {
+  .btn-#{$key} {
+    background-color: $valor;
+    transition: 0.4s;
+    border: 1px solid transparent;
+    text-align: center;
+
+    @if $key == light {
+      color: #111;
+      &:hover {
+        background-color: darken($valor, 60%);
+        color: #fff;
+      }
+    } @else if $key == dark {
+      color: #fff;
+      &:hover {
+        background-color: lighten($valor, 20%);
+        border: 1px solid lighten($valor, 20%);
+        box-shadow: 3px 3px 3px lighten($valor, 10%);
+      }
+    } @else {
+      color: #fff;
+      &:hover {
+        background-color: darken($valor, 20%);
+        border: 1px solid lighten($valor, 20%);
+        box-shadow: 3px 3px 3px lighten($valor, 10%);
+      }
+    }
+  }
+
+  .text-#{$key} {
+    color: $valor;
+  }
+
+  .border-#{$key} {
+    border: 1px solid $valor;
+  }
+}

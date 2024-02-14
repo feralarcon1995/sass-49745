@@ -1,0 +1,171 @@
+/* RESET */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+nav {
+  padding: 30px;
+  background-color: rgb(65, 25, 49);
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  list-style-type: none;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #fff;
+  font-size: 24px;
+  border: 2px solid #fff;
+  padding: 10px 60px;
+  transition: 0.5s;
+}
+
+.nav-link:hover {
+  background-color: #fff;
+  color: rgb(65, 25, 49);
+}
+
+.nav-list:hover .nav-link:not(:hover) {
+  filter: blur(5px);
+  padding: 5px 60px;
+}
+
+/*  */
+.pseudo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 30px;
+  /* .box:first-child{
+      background-color: brown;
+  } */
+  /* .box:last-child{
+      background-color: brown;
+  } */
+}
+.pseudo .box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  background-color: rgb(82, 33, 97);
+  font-size: 24px;
+  color: #fff;
+  width: 70%;
+  transition: 0.5s;
+}
+.pseudo .box-img {
+  width: 50%;
+  height: 600px;
+  overflow: hidden;
+}
+.pseudo .box-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(15px);
+  transition: 0.5s;
+}
+.pseudo .box-content {
+  width: 50%;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.pseudo .box-content a {
+  color: #fff;
+  text-decoration: none;
+  padding: 15px;
+  border: 2px solid #fff;
+  transition: 0.5s;
+  text-align: center;
+  visibility: hidden;
+}
+.pseudo .box-content a:hover {
+  background-color: #fff;
+  color: rgb(65, 25, 49);
+  border-radius: 15px;
+  display: block;
+}
+.pseudo .box:hover {
+  box-shadow: 5px 5px 30px 10px rgba(17, 17, 17, 0.368627451);
+  background-color: #921e64;
+}
+.pseudo .box:hover .box-content a {
+  visibility: visible;
+}
+.pseudo .box:hover .box-img img {
+  filter: blur(0);
+  width: 700px;
+  height: 700px;
+}
+.pseudo .box:nth-child(2) {
+  background-color: brown;
+}
+.pseudo .box:nth-child(even):hover {
+  background-color: rgb(104, 0, 0);
+}
+
+h2::first-letter {
+  color: bisque;
+  font-size: 30px;
+}
+
+::selection {
+  background-color: rgb(82, 33, 97);
+  color: pink;
+}
+
+.padding-1 {
+  padding: 5px;
+}
+
+.padding-2 {
+  padding: 10px;
+}
+
+.padding-3 {
+  padding: 15px;
+}
+
+.padding-4 {
+  padding: 20px;
+}
+
+.padding-5 {
+  padding: 25px;
+}
+
+.padding-6 {
+  padding: 30px;
+}
+
+.padding-7 {
+  padding: 35px;
+}
+
+.padding-8 {
+  padding: 40px;
+}
+
+.padding-9 {
+  padding: 45px;
+}
+
+.padding-10 {
+  padding: 50px;
+}
+
+/*# sourceMappingURL=style.css.map */
